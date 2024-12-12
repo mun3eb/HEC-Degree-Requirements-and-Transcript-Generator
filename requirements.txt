@@ -1,0 +1,9 @@
+ pandas
+ matplotlib.pyplot 
+ seaborn
+ pandas
+ seaborn 
+ streamlit 
+ fpdf  
+ BytesIO
+ pdfkit
