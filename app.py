@@ -283,15 +283,30 @@ def main():
 
             st.subheader("Generate Transcript CSV")
             if st.button('Generate Transcript CSV'):
-                generate_transcript_csv(df, file_name="transcript.csv")
+                transcript_file = "transcript.csv"
+                generate_transcript_csv(df_passed, file_name=transcript_file)
+                with open(transcript_file, "rb") as file:
+                    csv_data = file.read()
+                st.download_button(
+                    label="Download Transcript CSV",
+                    data=csv_data,
+                    file_name="transcript.csv",
+                    mime="text/csv"
+                )
                 st.success("Transcript CSV has been saved!")
-
             st.subheader("Generate Status File")
             if st.button('Generate Status Text File'):
-                generate_status_text_file(compliance, file_name="status.txt")
-                with open("status.txt", "r") as file:
-                    status_content = file.read()
-                st.text(status_content)
+                status_file = "status.txt"
+                generate_status_text_file(compliance, file_name=status_file)
+                with open(status_file, "r") as file:
+                    status_data = file.read()
+                st.text(status_data)
+                st.download_button(
+                    label="Download Status Text File",
+                    data=status_data,
+                    file_name="status.txt",
+                    mime="text/plain"
+                )
                 st.success("Status file has been saved!")
         
             # Determine if the user has fulfilled the degree requirements
