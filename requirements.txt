@@ -1,9 +1,6 @@
- pandas
- matplotlib
- seaborn
- pandas
- seaborn 
- streamlit 
- fpdf  
- BytesIO
- pdfkit
+pandas
+matplotlib
+seaborn
+streamlit
+fpdf
+pdfkit
