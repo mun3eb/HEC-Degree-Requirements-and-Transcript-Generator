@@ -284,7 +284,7 @@ def main():
             st.subheader("Generate Transcript CSV")
             if st.button('Generate Transcript CSV'):
                 transcript_file = "transcript.csv"
-                generate_transcript_csv(df_passed, file_name=transcript_file)
+                generate_transcript_csv(df, file_name=transcript_file)
                 with open(transcript_file, "rb") as file:
                     csv_data = file.read()
                 st.download_button(
