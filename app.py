@@ -281,19 +281,7 @@ def main():
             plot_pie_chart(compliance)
             st.pyplot()
 
-            st.subheader("Generate Transcript CSV")
-            if st.button('Generate Transcript CSV'):
-                transcript_file = "transcript.csv"
-                generate_transcript_csv(df, file_name=transcript_file)
-                with open(transcript_file, "rb") as file:
-                    csv_data = file.read()
-                st.download_button(
-                    label="Download Transcript CSV",
-                    data=csv_data,
-                    file_name="transcript.csv",
-                    mime="text/csv"
-                )
-                st.success("Transcript CSV has been saved!")
+            
             st.subheader("Generate Status File")
             if st.button('Generate Status Text File'):
                 status_file = "status.txt"
